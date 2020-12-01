@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="aa0c4437-dfef-4fb6-851b-f9677a42dcad" name="local" url="http://localhost:8088">
+        <fileTransfer mountedRoot="$PROJECT_DIR$" accessType="MOUNT" port="0" />
+      </webServer>
+      <webServer id="398484fa-77cc-4c29-8f5b-f2def9af62dc" name="data_dexch_net" url="http://119.28.215.41">
+        <fileTransfer host="119.28.215.41" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" accurateTimestamps="NEVER" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

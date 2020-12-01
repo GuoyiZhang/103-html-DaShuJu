@@ -1,0 +1,8 @@
+/*青 岛 研 锦 网 络 科 技 有 限 公 司   版权所有*/
+.BMap_bubble_top{
+    display: none !important;
+
+}
+.BMap_bubble_center{
+    opacity: 0 !important;
+}

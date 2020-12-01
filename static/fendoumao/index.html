@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>奋斗猫网络技术股份有限公司-运维管理平台</title>
+	<!--奋斗猫网络技术股份有限公司   版权所有-->
+	<link rel="stylesheet" href="./css/index.css">
+	<link rel="stylesheet" href="./fonts/icomoon.css">
+</head>
+
+<body>
+<div class="viewport">
+	<div class="column">
+		<!--版权所有奋斗猫网络技术股份有限公司-->
+		<div class="overview panel">
+			<div class="inner">
+				<div class="item">
+					<h4 id="device_num">加载中</h4>
+					<span>
+                            <i class="icon-dot" style="color: #006cff"></i>
+                            设备总数
+                        </span>
+				</div>
+				<div class="item">
+					<h4 id="device_add">加载中</h4>
+					<span>
+                            <i class="icon-dot" style="color: #6acca3"></i>
+                            季度新增
+                        </span>
+				</div>
+				<div class="item">
+					<h4 id="device_online_num">加载中</h4>
+					<span>
+                            <i class="icon-dot" style="color: #6acca3"></i>
+                            在线设备
+                        </span>
+				</div>
+				<div class="item">
+					<h4 id="device_offline_num">加载中</h4>
+					<span>
+                            <i class="icon-dot" style="color: #ed3f35"></i>
+                            异常设备
+                        </span>
+				</div>
+			</div>
+		</div>
+		<!--监控-->
+		<div class="monitor panel">
+			<div class="inner">
+				<div class="tabs">
+					<a href="javascript:;" data-index="0" class="active">游戏机启动监控</a>
+					<!--					<a href="javascript:;" data-index="1">异常设备监控</a>-->
+				</div>
+				<div class="content" style="display: block;">
+					<div class="head">
+						<span class="col">启动时间</span>
+						<span class="col">用户名</span>
+						<span class="col">设备地点</span>
+					</div>
+					<div class="marquee-view">
+						<div class="marquee" id="startList">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--设备-->
+		<div class="point panel">
+			<div class="inner">
+				<h3>设备分布统计</h3>
+				<div class="chart">
+					<div class="pie"></div>
+					<div class="data">
+						<div class="item">
+							<h4 id="all_device">加载中</h4>
+							<span>
+                                    <i class="icon-dot" style="color: #ed3f35"></i>
+                                    设备总数
+                                </span>
+						</div>
+						<div class="item">
+							<h4 id="mouth_add">加载中</h4>
+							<span>
+                                    <i class="icon-dot" style="color: #eacf19"></i>
+                                    本月新增
+                                </span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="column">
+		<!-- 地图 -->
+		<div class="map">
+			<h3>
+				<span class="icon-cube"></span>
+				设备数据统计
+			</h3>
+			<div class="chart">
+				<div class="geo"></div>
+			</div>
+		</div>
+		<!-- 用户 -->
+		<div class="users panel">
+			<div class="inner">
+				<h3>全国用户总量统计</h3>
+				<div class="chart">
+					<div class="bar"></div>
+					<div class="data">
+						<div class="item">
+							<h4 id="all_user">加载中</h4>
+							<span>
+                                    <i class="icon-dot" style="color: #ed3f35"></i>
+                                    用户总量
+                                </span>
+						</div>
+						<div class="item">
+							<h4 id="add_user">加载中</h4>
+							<span>
+                                    <i class="icon-dot" style="color: #eacf19"></i>
+                                    本月新增
+                                </span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="column">
+		<!--版权所有   研锦网络科技有限公司-->
+		<div class="order panel">
+			<div class="inner">
+				<!-- 筛选 -->
+				<div class="filter">
+					<a href="javascript:;" data-key="day365" class="active">365天</a>
+					<a href="javascript:;" data-key="day90">90天</a>
+					<a href="javascript:;" data-key="day30">30天</a>
+					<a href="javascript:;" data-key="day1">24小时</a>
+				</div>
+				<!-- 数据 -->
+				<div class="data">
+					<div class="item">
+						<h4 id="order_num">加载中</h4>
+						<span>
+                                <i class="icon-dot" style="color: #ed3f35;"></i>
+                                订单量
+                            </span>
+					</div>
+					<div class="item">
+						<h4 id="trade_num">加载中</h4>
+						<span>
+                                <i class="icon-dot" style="color: #eacf19;"></i>
+                                销售额(元)
+                            </span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 销售额 -->
+		<div class="sales panel">
+			<div class="inner">
+				<div class="caption">
+					<h3>销售额统计</h3>
+					<a href="javascript:;" class="active" data-type="year">年</a>
+					<a href="javascript:;" data-type="quarter">季</a>
+					<a href="javascript:;" data-type="month">月</a>
+					<a href="javascript:;" data-type="week">周</a>
+				</div>
+				<div class="chart">
+					<div class="label">单位:万</div>
+					<div class="line"></div>
+				</div>
+			</div>
+		</div>
+		<!-- 渠道 季度 -->
+		<div class="wrap">
+			<div class="channel panel">
+				<div class="inner">
+					<h3>渠道分布</h3>
+					<div class="data">
+						<div class="item">
+							<h4 id="channel_canyin">-- <small>%</small></h4>
+							<span>
+                                    <i class="icon-cube"></i>
+                                    KTV
+                                </span>
+						</div>
+						<div class="item">
+							<h4 id="channel_bag">-- <small>%</small></h4>
+							<span>
+                                    <i class="icon-cube"></i>
+                                    商超&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                </span>
+						</div>
+					</div>
+					<div class="data">
+						<div class="item">
+							<h4 id="channel_jiuba">-- <small>%</small></h4>
+							<span>
+                                    <i class="icon-cube"></i>
+                                    电影院
+                                </span>
+						</div>
+						<div class="item">
+							<h4 id="channel_bus">-- <small>%</small></h4>
+							<span>
+                                    <i class="icon-cube"></i>
+                                    洗浴中心
+                                </span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="quarter panel">
+				<div class="inner">
+					<h3>一季度销售进度</h3>
+					<div class="chart">
+						<div class="box">
+							<div class="gauge"></div>
+							<div class="label">75<small> %</small></div>
+						</div>
+						<div class="data">
+							<div class="item">
+								<h4>1,321</h4>
+								<span>
+                                        <i class="icon-dot" style="color: #6acca3"></i>
+                                        销售额(万元)
+                                    </span>
+							</div>
+							<div class="item">
+								<h4>150%</h4>
+								<span>
+                                        <i class="icon-dot" style="color: #ed3f35"></i>
+                                        同比增长
+                                    </span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 排行榜 -->
+		<div class="top panel">
+			<div class="inner">
+				<div class="all">
+					<h3>全国热榜</h3>
+					<ul>
+						<li>
+							<i class="icon-cup1" style="color: #d93f36;"></i>
+							可爱多
+						</li>
+						<li>
+							<i class="icon-cup2" style="color: #68d8fe;"></i>
+							娃哈啥
+						</li>
+						<li>
+							<i class="icon-cup3" style="color: #4c9bfd;"></i>
+							喜之郎
+						</li>
+					</ul>
+				</div>
+				<div class="province">
+					<h3>各省热销 <i class="date">// 近30日 //</i></h3>
+					<div class="data">
+						<ul class="sup">
+							<li>
+								<span>北京</span>
+								<span>25,179 <s class="icon-up"></s></span>
+							</li>
+							<li>
+								<span>河北</span>
+								<span>23,252 <s class="icon-down"></s></span>
+							</li>
+							<li>
+								<span>上海</span>
+								<span>20,760 <s class="icon-up"></s></span>
+							</li>
+							<li>
+								<span>江苏</span>
+								<span>23,252 <s class="icon-down"></s></span>
+							</li>
+							<li>
+								<span>山东</span>
+								<span>20,760 <s class="icon-up"></s></span>
+							</li>
+						</ul>
+						<ul class="sub">
+							<!-- <li><span>数据</span><span> 数据<s class="icon-up"></s></span></li> -->
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+<!--奋斗猫网络技术股份有限公司   版权所有-->
+<script src="./js/jquery.min.js"></script>
+<script src="./js/echarts.min.js"></script>
+<script src="./js/index.js"></script>
+
+<script src="./js/china.js"></script>
+<script src="./js/mymap.js"></script>
+<script>
+    var deviceNum, allUser, addUser;
+    var start = 0;
+    var data = {
+        day365: {orders: '加载中', amount: '加载中'},
+        day90: {orders: '加载中', amount: '加载中'},
+        day30: {orders: '加载中', amount: '加载中'},
+        day1: {orders: '加载中', amount: '加载中'}
+    }
+
+    function clock() {
+        if (start === 0) {
+            init()
+        } else {
+            device_num();
+            device_add();
+            device_online();
+            device_offline();
+            change_user();
+            change_trade();
+            channel()
+        }
+        start++;
+    }
+
+    function init() {
+        setStartLog();
+        device_num();
+        device_add();
+        change_user(true);
+        change_trade(true);
+        device_online(true);
+        device_offline(true);
+        channel(true)
+    }
+
+    /**
+     * 设备总数
+     * @param run
+     */
+    function device_num() {
+        var nowTime = parseInt(new Date().getTime() / 1000);
+        var device_num = parseInt((nowTime - 1590940800) / 1984);
+        deviceNum = device_num;
+        document.getElementById("device_num").innerHTML = device_num;
+        document.getElementById("all_device").innerHTML = device_num;
+    }
+
+    /**
+     * 用户总数
+     * @param run
+     */
+    function change_user(run) {
+        var nowTime = parseInt(new Date().getTime() / 1000);
+        if ((nowTime % 10 === random(0, 5)) || run) {
+            var all_user = parseInt((nowTime - 1590940800) / 6);
+            allUser = all_user;
+            document.getElementById("all_user").innerHTML = all_user;
+        }
+
+        //获取本月第一天零点零分零秒
+        var data = new Date();
+        data.setDate(1);
+        data.setHours(0);
+        data.setSeconds(0);
+        data.setMinutes(0);
+
+        var startTime = parseInt(data.getTime() / 1000);
+        console.log(nowTime);
+        console.log(startTime);
+        if ((3 === random(2, 5)) || run) {
+            var add_user = parseInt((nowTime - startTime) / 3);
+            addUser = add_user;
+            document.getElementById("add_user").innerHTML = add_user;
+        }
+    }
+
+    /**
+     * 季度新增
+     * @param run
+     */
+    function device_add() {
+        var nowTime = parseInt(new Date().getTime() / 1000);
+        // var device_add = parseInt((nowTime - 1590940800) / (30 * 3 * 24 * 3600));
+        var device_add = parseInt((nowTime - 1590940800) / 368 / 25);
+        document.getElementById("device_add").innerHTML = device_add;
+        document.getElementById("mouth_add").innerHTML = parseInt(device_add / 3 - device_add / 12);
+    }
+
+    /**
+     * 异常设备
+     * @param run
+     */
+    function device_online(run) {
+        var nowTime = parseInt(new Date().getTime() / 1000);
+        if ((nowTime % 10 === random(0, 5) && nowTime % 10 === random(0, 5)) || run) {
+            var device_online = parseInt(deviceNum * random(80, 89) / 100 + deviceNum * random(2, 8) / 3000);
+            document.getElementById("device_online_num").innerHTML = device_online;
+        }
+    }
+
+    /**
+     * 异常设备
+     * @param run
+     */
+    function device_offline(run) {
+        var nowTime = parseInt(new Date().getTime() / 1000);
+        if ((nowTime % 10 === random(0, 9) && nowTime % 10 === random(0, 9)) || run) {
+            var device_offline = parseInt(deviceNum * 5 / 1000 + deviceNum * random(1, 8) / 10000);
+            document.getElementById("device_offline_num").innerHTML = device_offline;
+        }
+    }
+
+    /**
+     * 渠道
+     * @param run
+     */
+    function channel(run) {
+        var nowTime = parseInt(new Date().getTime() / 1000);
+        if ((nowTime % 10 === random(0, 9) && nowTime % 10 === random(0, 9)) || run) {
+            var channel_canyin = parseInt(40 - random(0, 3) + random(0, 3));
+            var channel_bag = parseInt(30 - random(0, 3) + random(0, 3));
+            var channel_jiuba = parseInt(20 - random(0, 3) + random(0, 3));
+            var channel_bus = 100 - channel_canyin - channel_bag - channel_jiuba;
+            document.getElementById("channel_canyin").innerHTML = channel_canyin + "%";
+            document.getElementById("channel_bag").innerHTML = channel_bag + "%";
+            document.getElementById("channel_jiuba").innerHTML = channel_jiuba + "%";
+            document.getElementById("channel_bus").innerHTML = channel_bus + "%";
+        }
+    }
+
+    /**
+     * 启动日志
+     */
+    function setStartLog() {
+        var json = "[\"我输过 ！但从未怕过\", \"起航ň索\", \"三拼搏六梦。\", \"起航\", \"奋斗第一\", \"拼了老命在学习i\", \"奋斗赎青春\", \"项前进吧！\", \"越努力，越幸运。\", \"轻要闯\", \"遇见未来不躲避\", \"超越自我的极限↙\", \"放飞*_*梦想ㄟ\", \"你要勇敢\", \"恠哭泣ф坚强\", \"因为我的勇气\", \"命㈠样珍惜努力\", \"奋力向前\", \"必胜！\", \"做人上人\", \"奋斗吧\", \"永远志在四方\", \"做自信女人\", \"爱拼才会赢\", \"╰瘋瘋癲癲曾經也輝煌\", \"要学会坚强！\", \"失败也要败得漂亮\", \"有梦才会去努力\", \"我要向前进 \", \"走向未来\", \"人总要靠自己\", \"大风大浪就是闯\", \"自强不息 ェ\", \"-姑娘出息点行吗べ\", \"小三永远也当不了原配\", \"甩掉忧伤找回快乐@\", \"再次釋懷\", \"梦想，理应飞翔。\", \"失败也要败得漂亮\", \"好好活下去\", \"梦的方向叫闯。\", \"冲刺 最后的希望\", \"勇敢去面对\", \"学会坚强i\", \"拼搏。努力\", \"永不止步\", \"轻贵在拼搏\", \"︶ㄣ嗜爱华\", \"愿太阳照亮我腐朽的梦想\", \"该放就放\", \"对着镜子说加油\", \"在孤单中奋斗\", \"从未停步\", \"〞_____半途而废 ぐ\", \"怎能累了就说放弃i\", \"只考清华\", \"不成功也成仁\", \"每一段路丶都是一种领悟\", \"我叫意志力i\", \"莃望，（卟破灭）\", \"追梦抓梦\", \"心再痛╮也别忘了微笑\", \"持之以恒\", \"背水一战\", \"退回无路\", \"拼了老命在学习i\", \"无悔青春\", \"我能过的更好\", \"浪子回头金不换\", \"姑娘大步向前走\", \"逆袭吧Juvenile\", \"命 甴己造\", \"追梦者\", \"梦想才让心跳存在\", \"欣欣向荣\", \"姐是你的不灭的神话\", \"重拾女人心\", \"忍住悲伤停止哭泣\", \"男神塑造中i\", \"學哙嶶笶\", \"永不放弃\", \"人家在前进\", \"握紧手里的梦想\", \"奋斗呐\", \"风雨哈佛路\", \"化腐朽为神奇\", \"高傲的存在着\", \"奋而斗之\", \"拼命奋斗 i\", \"每①天都是↗开始\", \"埋头苦干，成就梦想~\", \"记得要微笑\", \"面带微笑的向前走\", \"要一直坚持呀！\", \"人总是要为自己活\", \"不断蜕变青春\", \"仰望辉煌。\", \"屹立在这世上！\", \"姑娘你没有倒下的理由\", \"死拼i\", \"天总会晴\", \"梦想起航\", \"Day Day Up\", \"女人，用微笑面对一切\", \"超过你只是时间问题\", \"两眼一睁开始竞争\", \"永不放弃\", \"不败的意志\", \"唯有靠自己\", \"做最好的自己\", \"奋斗的小青\", \"★积极向上☆\", \"欢者自欢^\", \"用命博青春\", \"大风大浪就是闯\", \"成就儿时的梦想\", \"为将来而努力\", \"成功路上总施工ing\", \"越是流泪越仰望\", \"只为轰轰烈烈的青春\", \"一米八不是梦!@\", \"o卟荏ご輸\", \"奋斗必经之路\", \"好未来需努力\", \"明天依然是晴天\", \"不言放弃\", \"多吃苦是为了，无悔！\", \"奔跑告别过去种种\", \"天天向上\", \"背水一战\", \"扭转乾坤\", \"要拼才会赢\", \"能力就是实力\", \"唯有努力\", \"天生傲骨怎能屈服\", \"要学会放下◇◆\", \"我的未来我做主\", \"除了坚强我别无选择i\", \"新的一你要努力了ヅ\", \"努力就会闪耀@\", \"每①天都是↗开始\", \"未来 晟功`）\", \"上进心@\", \"努力打拼\", \"期待┌;崛起`灬\", \"从心开始@\", \"那放肆的青春ˇ\", \"大步向前跨*\", \"我笑着坚强到最后一刻ゞ\", \"付出就有回报\", \"人丑就该多读书\", \"一个人也能坚强i\", \"汗水比眼泪更亮！\", \"^落荒而逃不及迎刃而解^\", \"低调的爆发\", \"我不能输\", \"抱负！\", \"z笙活の強锗\", \"天生励志难自弃\", \"梦的方向叫闯。\", \"天塌了 | 自己顶着\", \"超越自已\", \"梦想不只是梦与想\", \"人穷志不穷！\", \"不服输的倔强\", \"面子自己争\", \"心有阳光\", \"其实就是拼！\", \"穿上特步，永不止步\", \"逆袭学霸@\", \"努力学习\", \"学霸养成\", \"都会过去的\", \"未来尽在我手\", \"坐看云起时\", \"人一定要靠自己\", \"梦想永遠在騷動\", \"轻诠释我们的梦想\", \"命甴己造\", \"╰︶￣ 莫等闲\", \"荔枝师\", \"拿命去拼未来-\", \"别哭不能输\", \"化蛹为碟\", \"全力以赴\", \"只要学不死，就往死里学！\", \"一个人也要好好过i\", \"天生我才真得必有用\", \"一个人面对所有\", \"大步向前走不回头\", \"靠天靠地不如靠自己\", \"策马走天涯\", \"胸有大志\", \"记得笑\", \"壮志在我心\", \"拼未来！\", \"Believe yourself\", \"少就是不服输\", \"^我会哭，但我不会输〆\", \"无畏向前\", \"曾经的辉煌只是低谷\", \"梦要自己扛泪要自己尝\", \"为自己努力绽放一次\", \"努力是为自已将来铺路\", \"亦凡加油！\", \"拼出一个属于我的未来\", \"﹏晟功恠望│\", \" 努力奋斗 。有种努力叫奋斗\", \"用生活展示人生\", \"心碎志不可碎\", \"分开不代表分手\", \"做好自己你就最美；\", \"努力奮戰中考\", \"﹏り少当自强\", \"轻诠释我们的梦想\", \"能力就是实力\", \"愿梦想在六绽放\", \"诠释 ゛ 一 种信仰 。\", \"我还能坚持\", \"我会一直笑\", \"微笑，向前行\", \"好好学习i\", \"挺自己\"]";
+        var jsonObj = JSON.parse(json);
+
+        var xian =
+            "{\"status\":0,\"data\":{\"totalCounts\":1000,\"poiInfos\":[{\"poiId\":186968010,\"frontImg\":\"https://img.meituan.net/msmerchant/28a3646024afad358485ee10b4e283081208661.jpg@600w_600h_1l\",\"title\":\"有拈头成都市井火锅（凤城五路店）\",\"avgScore\":3.8,\"allCommentNum\":324,\"address\":\"未央区西安市经济技术开发区未央路169号银池品智天下B座1－3层0108商铺（凤城五路地铁D口出向北200米工商银行下面）\",\"avgPrice\":62,\"dealList\":[],\"hasAds\":true,\"adsClickUrl\":\"https://mlog.dianping.com/api/cpv/billing?productid=74&display_id=50028&bg=0&pctr=0.059516&ad_cj=BXPgMfTM5MGjMX4FNOatcywaCV1h6UTzr-l6s2iOtBeno2MGKvN9-3pxviM8trzLGURkkM81lfy5u1tbREUKz5Jgw8ifNGQ2e2Sexx-V0jNRmXChKSlJb_GVpQf4db445tVRBZuZRec4TCprfQ&ad_ci=BXPgOfXc6IjrY2YRbOmoYntNTwY-v2voorcuvGiTvROroG4VfK0-ozYx4385ofCcUhU51KFs16Ph71NcWkcM2cZ318yuLn0MLzGVwhqU0DtQn3WzbXMTKfqSpQP4fL445dVRBZvKEL1oTSFtLg&discount=1&mtlaunch_city_id=42&bu=28&category_id=110&pos=1&mtuser_id64=0&pcvr=0.006049180327868852&client_version=6.5.1&mtdpid=18cadffe6c0f437b9af9.1606359642.1.0.0&bottomprice=1.0&user_agent=pc&launch_city_id=0&mtcategory_ids=1&sver=2&AdExpPath=3-56-112,3-169-830,3-287-1751,3-140-565,3-296-1796,3-50-100,3-164-1594,3-227-1297,3-12-28,18-293-1778,3-201-1096&bottomfen=100&mtuser_id=0&adsCtrStrategy=SearchPcSearchBaseline&page_city_id=0&entityplat=2&ad_v=2&mtadshop_id=186968010&mtpage_city_id=42&adidx=1&act=2&gather_index=1&item_index=-999\",\"adsShowUrl\":\"https://mlog.dianping.com/api/cpv/action?productid=74&display_id=50028&bg=0&pctr=0.059516&ad_cj=BXPgMfTM5MGjMX4FNOatcywaCV1h6UTzr-l6s2iOtBeno2MGKvN9-3pxviM8trzLGURkkM81lfy5u1tbREUKz5Jgw8ifNGQ2e2Sexx-V0jNRmXChKSlJb_GVpQf4db445tVRBZuZRec4TCprfQ&ad_ci=BXPgOfXc6IjrY2YRbOmoYntNTwY-v2voorcuvGiTvROroG4VfK0-ozYx4385ofCcUhU51KFs16Ph71NcWkcM2cZ318yuLn0MLzGVwhqU0DtQn3WzbXMTKfqSpQP4fL445dVRBZvKEL1oTSFtLg&discount=1&mtlaunch_city_id=42&bu=28&category_id=110&pos=1&mtuser_id64=0&pcvr=0.006049180327868852&client_version=6.5.1&mtdpid=18cadffe6c0f437b9af9.1606359642.1.0.0&bottomprice=1.0&user_agent=pc&launch_city_id=0&mtcategory_ids=1&sver=2&AdExpPath=3-56-112,3-169-830,3-287-1751,3-140-565,3-296-1796,3-50-100,3-164-1594,3-227-1297,3-12-28,18-293-1778,3-201-1096&bottomfen=100&mtuser_id=0&adsCtrStrategy=SearchPcSearchBaseline&page_city_id=0&entityplat=2&ad_v=2&mtadshop_id=186968010&mtpage_city_id=42&adidx=1&act=3&gather_index=1&item_index=-999\"},{\"poiId\":2455954,\"frontImg\":\"http://p0.meituan.net/600.600/bbia/ca65af16b23c2eb487671a7767b3fb7e100191.jpg\",\"title\":\"蝎王府羊蝎子（西稍门店）\",\"avgScore\":4.8,\"allCommentNum\":9647,\"address\":\"莲湖区西稍门向北50米路东（开元商城对面）\",\"avgPrice\":58,\"dealList\":[],\"hasAds\":false,\"adsClickUrl\":\"\",\"adsShowUrl\":\"\"},{\"poiId\":6712328,\"frontImg\":\"http://p1.meituan.net/600.600/deal/e501a5a43fc504eec76f80fe9251ab4096203.jpg\",\"title\":\"云贵过桥米线（车城花园店）\",\"avgScore\":5,\"allCommentNum\":6694,\"address\":\"高陵区车城花园东门南50米西安银行隔壁\",\"avgPrice\":15,\"dealList\":[],\"hasAds\":false,\"adsClickUrl\":\"\",\"adsShowUrl\":\"\"},{\"poiId\":183992282,\"frontImg\":\"https://img.meituan.net/180.180/msmerchant/a418553cf07dd7cb0bdd887202ce6ffe568199.jpg@600w_600h_1l\",\"title\":\"天仁居涮肉坊（高新路店）\",\"avgScore\":4.7,\"allCommentNum\":760,\"address\":\"雁塔区高新路36号（创业咖啡街区和颐酒店后门）\",\"avgPrice\":78,\"dealList\":[],\"hasAds\":true,\"adsClickUrl\":\"https://mlog.dianping.com/api/cpv/billing?productid=74&display_id=50028&bg=0&pctr=0.06239344262295081&ad_cj=CaVNuPKprAV7Deg5DYwTY76pl7LdkKZSl0XYoxPah1CEdIJHAe0MCgJTVs9V1chD-gZppUQ2HTguG_y1xYBvs3YrTCuLqj6ryIJJ232r56_BaTQU3WQtQzbsnOMeUXMspbhXpNMyxNudRDBB8g&ad_ci=CaVNsPO5oEwzX_AtVYMRfev11O6GxolJmhuMrBbBhVaFfolYXbVPVkETDZJQwoQRsVg-4yNtX2d_SPi43I1os3YrTAqHtC_JkNBE2H2s6afLbiRThj1sTDXunOUURjYmjKlG2tpjkd_PRTsV&discount=1&mtlaunch_city_id=42&bu=2&category_id=110&pos=1&mtuser_id64=0&pcvr=0.0031645569620253177&client_version=6.5.1&mtdpid=18cadffe6c0f437b9af9.1606359642.1.0.0&bottomprice=1.0&user_agent=pc&launch_city_id=0&mtcategory_ids=1&sver=2&AdExpPath=3-56-112,3-169-830,3-287-1751,3-140-565,3-296-1796,3-50-100,3-164-1594,3-227-1297,3-12-28,18-293-1778,3-201-1096&bottomfen=100&mtuser_id=0&adsCtrStrategy=SearchPcSearchBaseline&page_city_id=0&entityplat=2&ad_v=2&mtadshop_id=183992282&mtpage_city_id=42&adidx=4&act=2&gather_index=1&item_index=-999\",\"adsShowUrl\":\"https://mlog.dianping.com/api/cpv/action?productid=74&display_id=50028&bg=0&pctr=0.06239344262295081&ad_cj=CaVNuPKprAV7Deg5DYwTY76pl7LdkKZSl0XYoxPah1CEdIJHAe0MCgJTVs9V1chD-gZppUQ2HTguG_y1xYBvs3YrTCuLqj6ryIJJ232r56_BaTQU3WQtQzbsnOMeUXMspbhXpNMyxNudRDBB8g&ad_ci=CaVNsPO5oEwzX_AtVYMRfev11O6GxolJmhuMrBbBhVaFfolYXbVPVkETDZJQwoQRsVg-4yNtX2d_SPi43I1os3YrTAqHtC_JkNBE2H2s6afLbiRThj1sTDXunOUURjYmjKlG2tpjkd_PRTsV&discount=1&mtlaunch_city_id=42&bu=2&category_id=110&pos=1&mtuser_id64=0&pcvr=0.0031645569620253177&client_version=6.5.1&mtdpid=18cadffe6c0f437b9af9.1606359642.1.0.0&bottomprice=1.0&user_agent=pc&launch_city_id=0&mtcategory_ids=1&sver=2&AdExpPath=3-56-112,3-169-830,3-287-1751,3-140-565,3-296-1796,3-50-100,3-164-1594,3-227-1297,3-12-28,18-293-1778,3-201-1096&bottomfen=100&mtuser_id=0&adsCtrStrategy=SearchPcSearchBaseline&page_city_id=0&entityplat=2&ad_v=2&mtadshop_id=183992282&mtpage_city_id=42&adidx=4&act=3&gather_index=1&item_index=-999\"},{\"poiId\":667613,\"frontImg\":\"https://img.meituan.net/600.600/msmerchant/5b86f127d65211f9c890af9846a3d16b864813.jpg\",\"title\":\"西安君乐城堡酒店·雅庭西餐厅\",\"avgScore\":4.6,\"allCommentNum\":2677,\"address\":\"碑林区环城南路西段12号西安君乐城堡酒店（近南门广场）\",\"avgPrice\":89,\"dealList\":[],\"hasAds\":false,\"adsClickUrl\":\"\",\"adsShowUrl\":\"\"},{\"poiId\":666645,\"frontImg\":\"https://img.meituan.net/600.600/msmerchant/9c78df753d8313383ed8e180305880b7293002.jpg\",\"title\":\"蘑菇爱上饭（小寨店）\",\"avgScore\":4.6,\"allCommentNum\":17554,\"address\":\"雁塔区长安南路237号路东（西安音乐学院对面）\",\"avgPrice\":17,\"dealList\":[],\"hasAds\":false,\"adsClickUrl\":\"\",\"adsShowUrl\":\"\"},{\"poiId\":4609146,\"frontImg\":\"https://img.meituan.net/msmerchant/dec8922d77a9880f2cc762d9353c3ca93759908.jpg@600w_600h_1l\",\"title\":\"千家粗粮王（小寨店）\",\"avgScore\":4.2,\"allCommentNum\":54056,\"address\":\"雁塔区小寨东路国贸大厦4楼\",\"avgPrice\":67,\"dealList\":[],\"hasAds\":true,\"adsClickUrl\":\"https://mlog.dianping.com/api/cpv/billing?productid=74&display_id=50028&bg=0&pctr=0.07987179487179488&ad_cj=9JpauHJXlXnVX9wzNtzXyBl0CuJRbggTMLleIsjwjKs4nxCx_wW99rvbve2Ik94yInV2mWfeEumQ6D94La9kmPbHGUcm7EGz-zjVZLK45fdrySH1HOffSfYdah_Mbr7SGosYuw_O0tASAA&ad_ci=9JpasHNHmTCdDcQnbtPe20giQb4GOCcIPecKK83vhq07kgDtoEnhuvqB7eCOg5pqYSYly1reEumT8TB-MuQ52qXQD0It7Ejr8zrRY7Wz5PhmzCTmXb2CDf8aawmdPNvjMPUozQXMh40VUmDa-A&discount=1&mtlaunch_city_id=42&bu=2&category_id=111&pos=1&mtuser_id64=0&pcvr=0.013123456790123458&client_version=6.5.1&mtdpid=18cadffe6c0f437b9af9.1606359642.1.0.0&bottomprice=1.0&user_agent=pc&launch_city_id=0&mtcategory_ids=1&sver=2&AdExpPath=3-56-112,3-169-830,3-287-1751,3-140-565,3-296-1796,3-50-100,3-164-1594,3-227-1297,3-12-28,18-293-1778,3-201-1096&bottomfen=100&mtuser_id=0&adsCtrStrategy=SearchPcSearchBaseline&page_city_id=0&entityplat=2&ad_v=2&mtadshop_id=4609146&mtpage_city_id=42&adidx=7&act=2&gather_index=1&item_index=-999\",\"adsShowUrl\":\"https://mlog.dianping.com/api/cpv/action?productid=74&display_id=50028&bg=0&pctr=0.07987179487179488&ad_cj=9JpauHJXlXnVX9wzNtzXyBl0CuJRbggTMLleIsjwjKs4nxCx_wW99rvbve2Ik94yInV2mWfeEumQ6D94La9kmPbHGUcm7EGz-zjVZLK45fdrySH1HOffSfYdah_Mbr7SGosYuw_O0tASAA&ad_ci=9JpasHNHmTCdDcQnbtPe20giQb4GOCcIPecKK83vhq07kgDtoEnhuvqB7eCOg5pqYSYly1reEumT8TB-MuQ52qXQD0It7Ejr8zrRY7Wz5PhmzCTmXb2CDf8aawmdPNvjMPUozQXMh40VUmDa-A&discount=1&mtlaunch_city_id=42&bu=2&category_id=111&pos=1&mtuser_id64=0&pcvr=0.013123456790123458&client_version=6.5.1&mtdpid=18cadffe6c0f437b9af9.1606359642.1.0.0&bottomprice=1.0&user_agent=pc&launch_city_id=0&mtcategory_ids=1&sver=2&AdExpPath=3-56-112,3-169-830,3-287-1751,3-140-565,3-296-1796,3-50-100,3-164-1594,3-227-1297,3-12-28,18-293-1778,3-201-1096&bottomfen=100&mtuser_id=0&adsCtrStrategy=SearchPcSearchBaseline&page_city_id=0&entityplat=2&ad_v=2&mtadshop_id=4609146&mtpage_city_id=42&adidx=7&act=3&gather_index=1&item_index=-999\"},{\"poiId\":5779823,\"frontImg\":\"http://p0.meituan.net/600.600/deal/af4df00cd1c7d5d54f4d5775d2097dc8421520.jpg\",\"title\":\"口口私房锅（立丰国际店）\",\"avgScore\":4.9,\"allCommentNum\":513,\"address\":\"碑林区东二环立丰国际公寓南隔壁立信公寓709室\",\"avgPrice\":59,\"dealList\":[],\"hasAds\":false,\"adsClickUrl\":\"\",\"adsShowUrl\":\"\"},{\"poiId\":1498195,\"frontImg\":\"http://p1.meituan.net/600.600/bbia/09c341219a3ffef1f8a002ec678a176393169.jpg\",\"title\":\"比格比萨自助（新世界时尚广场店）\",\"avgScore\":4.8,\"allCommentNum\":24864,\"address\":\"莲湖区北大街新世界时尚广场3层001\",\"avgPrice\":55,\"dealList\":[],\"hasAds\":false,\"adsClickUrl\":\"\",\"adsShowUrl\":\"\"},{\"poiId\":188071841,\"frontImg\":\"https://img.meituan.net/180.180/msmerchant/8283465bb7365311f1323227e987cb3688049.jpg@600w_600h_1l\",\"title\":\"有拈头成都市井火锅（民乐园万达店）\",\"avgScore\":4.1,\"allCommentNum\":288,\"address\":\"新城区解放路111号民乐园文化街万达广场四号门北20米路西\",\"avgPrice\":75,\"dealList\":[],\"hasAds\":true,\"adsClickUrl\":\"https://mlog.dianping.com/api/cpv/billing?productid=74&display_id=50028&bg=0&pctr=0.05689119170984456&ad_cj=rEJPlIuoZXuuVh2aUIXEfj9kGP8PjU0z0yGh7hNchQj1MmIS0NPi_9mIjwg9E2fkrSgYcVb4v7qy1VbRLQqH32YqndY7n5cMZK8SQsh9a9FPctQ8N_8CSqalWg4Ctk3W7n-yLn2ZlafEtONAug&ad_ci=rEJPnIq4aTLmBAWOCIrAbmw0WaJW22Io3n_14RVBigD1P2cMgIuhpZXH1l8wFXmo_G1OLBaW8LzmgFnQMg6HyydpnsYvuIo-aPYeQct5b9VOf9A7JrpbF-SqXwoAtVOT51WjPwOcn6XB4L9AvsA&discount=1&mtlaunch_city_id=42&bu=28&category_id=110&pos=1&mtuser_id64=0&pcvr=0.002486956521739131&client_version=6.5.1&mtdpid=18cadffe6c0f437b9af9.1606359642.1.0.0&bottomprice=1.0&user_agent=pc&launch_city_id=0&mtcategory_ids=1&sver=2&AdExpPath=3-56-112,3-169-830,3-287-1751,3-140-565,3-296-1796,3-50-100,3-164-1594,3-227-1297,3-12-28,18-293-1778,3-201-1096&bottomfen=100&mtuser_id=0&adsCtrStrategy=SearchPcSearchBaseline&page_city_id=0&entityplat=2&ad_v=2&mtadshop_id=188071841&mtpage_city_id=42&adidx=10&act=2&gather_index=1&item_index=-999\",\"adsShowUrl\":\"https://mlog.dianping.com/api/cpv/action?productid=74&display_id=50028&bg=0&pctr=0.05689119170984456&ad_cj=rEJPlIuoZXuuVh2aUIXEfj9kGP8PjU0z0yGh7hNchQj1MmIS0NPi_9mIjwg9E2fkrSgYcVb4v7qy1VbRLQqH32YqndY7n5cMZK8SQsh9a9FPctQ8N_8CSqalWg4Ctk3W7n-yLn2ZlafEtONAug&ad_ci=rEJPnIq4aTLmBAWOCIrAbmw0WaJW22Io3n_14RVBigD1P2cMgIuhpZXH1l8wFXmo_G1OLBaW8LzmgFnQMg6HyydpnsYvuIo-aPYeQct5b9VOf9A7JrpbF-SqXwoAtVOT51WjPwOcn6XB4L9AvsA&discount=1&mtlaunch_city_id=42&bu=28&category_id=110&pos=1&mtuser_id64=0&pcvr=0.002486956521739131&client_version=6.5.1&mtdpid=18cadffe6c0f437b9af9.1606359642.1.0.0&bottomprice=1.0&user_agent=pc&launch_city_id=0&mtcategory_ids=1&sver=2&AdExpPath=3-56-112,3-169-830,3-287-1751,3-140-565,3-296-1796,3-50-100,3-164-1594,3-227-1297,3-12-28,18-293-1778,3-201-1096&bottomfen=100&mtuser_id=0&adsCtrStrategy=SearchPcSearchBaseline&page_city_id=0&entityplat=2&ad_v=2&mtadshop_id=188071841&mtpage_city_id=42&adidx=10&act=3&gather_index=1&item_index=-999\"},{\"poiId\":1921881,\"frontImg\":\"http://p1.meituan.net/600.600/bbia/15ab83be8aa50ab280b2afcc93f0cc9c638593.jpg\",\"title\":\"李记搅团（三桥店）\",\"avgScore\":4.8,\"allCommentNum\":2731,\"address\":\"未央区沣东新城双拥路金桥国际\",\"avgPrice\":48,\"dealList\":[],\"hasAds\":false,\"adsClickUrl\":\"\",\"adsShowUrl\":\"\"},{\"poiId\":41155294,\"frontImg\":\"http://p1.meituan.net/600.600/bbia/46c8c06a93e97e880099f1dd955b2c0b5090533.jpg\",\"title\":\"尚学社的理想书店\",\"avgScore\":5,\"allCommentNum\":585,\"address\":\"雁塔区陕西省西安市雁塔区科技路195号世纪颐园B座10201号\",\"avgPrice\":26,\"dealList\":[],\"hasAds\":false,\"adsClickUrl\":\"\",\"adsShowUrl\":\"\"},{\"poiId\":190634607,\"frontImg\":\"https://img.meituan.net/180.180/msmerchant/ace598d48e7bed0acbb96ed6f5161c1c151300.jpg@600w_600h_1l\",\"title\":\"天仁居涮肉坊（凤城一路店）\",\"avgScore\":4.6,\"allCommentNum\":299,\"address\":\"未央区凤城一路与渭滨路交叉口南100米\",\"avgPrice\":69,\"dealList\":[],\"hasAds\":true,\"adsClickUrl\":\"https://mlog.dianping.com/api/cpv/billing?productid=74&display_id=50028&bg=0&pctr=0.056479750778816194&ad_cj=weX990Z8A2aedDOzi2-TrLXJV939O0V3Iwb4UM4Kzmbbz4qOGidfofNuQpymHmrrB8MRwsGR0T_hHCI3kMbnLtmMzYAyk22mJ-BQy27f948OK8AcXcAGgQvDRPcq1h8EzI8cvXgm_VIYRRitYQ&ad_ci=weX9_0dsDy_WJiun02CWsuKYF4CmbWpsLlisX8ocymrazo-eSXoe8LEkHcujGnWvUIJCkYX5njm1SS8zjsDkPp_PzpAmtHCUK7lcyG3b84sPJsQbTIVf3EnMQfMo1QFBxaUNrAZ6qgBOR0KpM_4&discount=1&mtlaunch_city_id=42&bu=2&category_id=110&pos=1&mtuser_id64=0&pcvr=0.003730769230769231&client_version=6.5.1&mtdpid=18cadffe6c0f437b9af9.1606359642.1.0.0&bottomprice=1.0&user_agent=pc&launch_city_id=0&mtcategory_ids=1&sver=2&AdExpPath=3-56-112,3-169-830,3-287-1751,3-140-565,3-296-1796,3-50-100,3-164-1594,3-227-1297,3-12-28,18-293-1778,3-201-1096&bottomfen=100&mtuser_id=0&adsCtrStrategy=SearchPcSearchBaseline&page_city_id=0&entityplat=2&ad_v=2&mtadshop_id=190634607&mtpage_city_id=42&adidx=13&act=2&gather_index=1&item_index=-999\",\"adsShowUrl\":\"https://mlog.dianping.com/api/cpv/action?productid=74&display_id=50028&bg=0&pctr=0.056479750778816194&ad_cj=weX990Z8A2aedDOzi2-TrLXJV939O0V3Iwb4UM4Kzmbbz4qOGidfofNuQpymHmrrB8MRwsGR0T_hHCI3kMbnLtmMzYAyk22mJ-BQy27f948OK8AcXcAGgQvDRPcq1h8EzI8cvXgm_VIYRRitYQ&ad_ci=weX9_0dsDy_WJiun02CWsuKYF4CmbWpsLlisX8ocymrazo-eSXoe8LEkHcujGnWvUIJCkYX5njm1SS8zjsDkPp_PzpAmtHCUK7lcyG3b84sPJsQbTIVf3EnMQfMo1QFBxaUNrAZ6qgBOR0KpM_4&discount=1&mtlaunch_city_id=42&bu=2&category_id=110&pos=1&mtuser_id64=0&pcvr=0.003730769230769231&client_version=6.5.1&mtdpid=18cadffe6c0f437b9af9.1606359642.1.0.0&bottomprice=1.0&user_agent=pc&launch_city_id=0&mtcategory_ids=1&sver=2&AdExpPath=3-56-112,3-169-830,3-287-1751,3-140-565,3-296-1796,3-50-100,3-164-1594,3-227-1297,3-12-28,18-293-1778,3-201-1096&bottomfen=100&mtuser_id=0&adsCtrStrategy=SearchPcSearchBaseline&page_city_id=0&entityplat=2&ad_v=2&mtadshop_id=190634607&mtpage_city_id=42&adidx=13&act=3&gather_index=1&item_index=-999\"},{\"poiId\":3246823,\"frontImg\":\"http://p0.meituan.net/600.600/biztone/d7a22d87e9343a0f461560de233aec17790849.jpg\",\"title\":\"乡村基（丈八北路店）\",\"avgScore\":4.2,\"allCommentNum\":5316,\"address\":\"雁塔区丈八北路540号华润万家1楼\",\"avgPrice\":25,\"dealList\":[],\"hasAds\":false,\"adsClickUrl\":\"\",\"adsShowUrl\":\"\"},{\"poiId\":40860063,\"frontImg\":\"https://img.meituan.net/600.600/msmerchant/5dde9925ab680c61a7c98e9dac0d063d183748.jpg\",\"title\":\"食色火锅（李家村店）\",\"avgScore\":4.5,\"allCommentNum\":1026,\"address\":\"碑林区雁塔路北段李家村购物中心1栋1单元2410室（李家村购物中心旁边雅居酒店进）\",\"avgPrice\":60,\"dealList\":[],\"hasAds\":false,\"adsClickUrl\":\"\",\"adsShowUrl\":\"\"},{\"poiId\":190634607,\"frontImg\":\"https://img.meituan.net/180.180/msmerchant/ace598d48e7bed0acbb96ed6f5161c1c151300.jpg@600w_600h_1l\",\"title\":\"天仁居涮肉坊（凤城一路店）\",\"avgScore\":4.6,\"allCommentNum\":299,\"address\":\"未央区凤城一路与渭滨路交叉口南100米\",\"avgPrice\":69,\"dealList\":[],\"hasAds\":true,\"adsClickUrl\":\"https://mlog.dianping.com/api/cpv/billing?productid=74&display_id=50028&bg=0&pctr=0.056479750778816194&ad_cj=vemsMqM38x8NQYs1_6W7pvePjU0CV5ROLdpIGijw2DRSpLC5W_NfkInfLk0GS4L88-pQW-Ff-DRbvaHXKyJmem6TL1NdGFf1gtolJ3IoNlVcq1QoB4flcOzyyW7ktcA9eC8hVrlZfiltzJyQww&ad_ci=vemsOqIn_1ZFE5Mhp6q-uKDezRBZAbtVIIQcFSzm3DhTpbWpCK4ewcuVcRoDT524pKsDCKU3tzIP6KzTNSRlaijQLENJP0rHjoMpJHEsMlJVqVMsE8a6J6j2xWjtsN54cQUwR8dceyg6zJvAlQs&discount=1&mtlaunch_city_id=42&bu=2&category_id=110&pos=1&mtuser_id64=0&pcvr=0.003730769230769231&client_version=6.5.1&mtdpid=18cadffe6c0f437b9af9.1606359642.1.0.0&bottomprice=1.0&user_agent=pc&launch_city_id=0&mtcategory_ids=1&sver=2&AdExpPath=3-56-112,3-169-830,3-287-1751,3-140-565,3-296-1796,3-50-100,3-164-1594,3-227-1297,3-12-28,18-293-1778,3-201-1096&bottomfen=100&mtuser_id=0&adsCtrStrategy=SearchPcSearchBaseline&page_city_id=0&entityplat=2&ad_v=2&mtadshop_id=190634607&mtpage_city_id=42&adidx=16&act=2&gather_index=1&item_index=-999\",\"adsShowUrl\":\"https://mlog.dianping.com/api/cpv/action?productid=74&display_id=50028&bg=0&pctr=0.056479750778816194&ad_cj=vemsMqM38x8NQYs1_6W7pvePjU0CV5ROLdpIGijw2DRSpLC5W_NfkInfLk0GS4L88-pQW-Ff-DRbvaHXKyJmem6TL1NdGFf1gtolJ3IoNlVcq1QoB4flcOzyyW7ktcA9eC8hVrlZfiltzJyQww&ad_ci=vemsOqIn_1ZFE5Mhp6q-uKDezRBZAbtVIIQcFSzm3DhTpbWpCK4ewcuVcRoDT524pKsDCKU3tzIP6KzTNSRlaijQLENJP0rHjoMpJHEsMlJVqVMsE8a6J6j2xWjtsN54cQUwR8dceyg6zJvAlQs&discount=1&mtlaunch_city_id=42&bu=2&category_id=110&pos=1&mtuser_id64=0&pcvr=0.003730769230769231&client_version=6.5.1&mtdpid=18cadffe6c0f437b9af9.1606359642.1.0.0&bottomprice=1.0&user_agent=pc&launch_city_id=0&mtcategory_ids=1&sver=2&AdExpPath=3-56-112,3-169-830,3-287-1751,3-140-565,3-296-1796,3-50-100,3-164-1594,3-227-1297,3-12-28,18-293-1778,3-201-1096&bottomfen=100&mtuser_id=0&adsCtrStrategy=SearchPcSearchBaseline&page_city_id=0&entityplat=2&ad_v=2&mtadshop_id=190634607&mtpage_city_id=42&adidx=16&act=3&gather_index=1&item_index=-999\"},{\"poiId\":1921033,\"frontImg\":\"http://p1.meituan.net/600.600/deal/__48348335__1505935.jpg\",\"title\":\"澄城水盆羊肉（大寨路店）\",\"avgScore\":4,\"allCommentNum\":3281,\"address\":\"雁塔区大寨路旭景碧泽园南门斜对面\",\"avgPrice\":21,\"dealList\":[],\"hasAds\":false,\"adsClickUrl\":\"\",\"adsShowUrl\":\"\"},{\"poiId\":3286222,\"frontImg\":\"http://p0.meituan.net/600.600/bbia/3286222_1591105345122.jpeg\",\"title\":\"Giacomo's手风琴西餐厅（兴庆南路店）\",\"avgScore\":4.8,\"allCommentNum\":3332,\"address\":\"碑林区皇甫路兴庆南路159号常春藤花园商业街3-1-7（常春藤商业街区西区南门）\",\"avgPrice\":57,\"dealList\":[],\"hasAds\":false,\"adsClickUrl\":\"\",\"adsShowUrl\":\"\"},{\"poiId\":1194116619,\"frontImg\":\"https://p0.meituan.net/biztone/1194116619_1603091222172.jpeg@600w_600h_1l\",\"title\":\"天仁居涮肉坊（翠华路店）\",\"avgScore\":4.3,\"allCommentNum\":11,\"address\":\"雁塔区翠华路17号百事特威一楼临街\",\"avgPrice\":50,\"dealList\":[],\"hasAds\":true,\"adsClickUrl\":\"https://mlog.dianping.com/api/cpv/billing?productid=74&display_id=50028&bg=0&pctr=0.06529559748427674&ad_cj=S8JFAm0sJjHg2JEowNdTyc_FYsJy06OfQrHVrUPHy2JTgSh1lJ8u9B2Ub9J6qzd60XCk8XWoVkBnVZYFjPJR34odgInJ-GxSIM-y4_WNZD-D-QzVv1OxkPCWRZvc-pCDbuM02JTlTe7ygIlJ1azI&ad_ci=S8JFCmw8Knioiok8mNha2pmUJp4vhYyET--BoUndymBcji9_hs90tEXTJY8soSA_iTbypTfBDh18BshYgPdM1ocdgInJ2WBMMa3qsfiOZDuE-gDQqxHvzbeTQJLV_pGSK-kdyYWbR-z0gNlB06w&discount=1&mtlaunch_city_id=42&bu=2&category_id=110&pos=1&mtuser_id64=0&pcvr=0.0031645569620253177&client_version=6.5.1&mtdpid=18cadffe6c0f437b9af9.1606359642.1.0.0&bottomprice=1.0&user_agent=pc&launch_city_id=0&mtcategory_ids=1&sver=2&AdExpPath=3-56-112,3-169-830,3-287-1751,3-140-565,3-296-1796,3-50-100,3-164-1594,3-227-1297,3-12-28,18-293-1778,3-201-1096&bottomfen=100&mtuser_id=0&adsCtrStrategy=SearchPcSearchBaseline&page_city_id=0&entityplat=2&ad_v=2&mtadshop_id=1194116619&mtpage_city_id=42&adidx=19&act=2&gather_index=1&item_index=-999\",\"adsShowUrl\":\"https://mlog.dianping.com/api/cpv/action?productid=74&display_id=50028&bg=0&pctr=0.06529559748427674&ad_cj=S8JFAm0sJjHg2JEowNdTyc_FYsJy06OfQrHVrUPHy2JTgSh1lJ8u9B2Ub9J6qzd60XCk8XWoVkBnVZYFjPJR34odgInJ-GxSIM-y4_WNZD-D-QzVv1OxkPCWRZvc-pCDbuM02JTlTe7ygIlJ1azI&ad_ci=S8JFCmw8Knioiok8mNha2pmUJp4vhYyET--BoUndymBcji9_hs90tEXTJY8soSA_iTbypTfBDh18BshYgPdM1ocdgInJ2WBMMa3qsfiOZDuE-gDQqxHvzbeTQJLV_pGSK-kdyYWbR-z0gNlB06w&discount=1&mtlaunch_city_id=42&bu=2&category_id=110&pos=1&mtuser_id64=0&pcvr=0.0031645569620253177&client_version=6.5.1&mtdpid=18cadffe6c0f437b9af9.1606359642.1.0.0&bottomprice=1.0&user_agent=pc&launch_city_id=0&mtcategory_ids=1&sver=2&AdExpPath=3-56-112,3-169-830,3-287-1751,3-140-565,3-296-1796,3-50-100,3-164-1594,3-227-1297,3-12-28,18-293-1778,3-201-1096&bottomfen=100&mtuser_id=0&adsCtrStrategy=SearchPcSearchBaseline&page_city_id=0&entityplat=2&ad_v=2&mtadshop_id=1194116619&mtpage_city_id=42&adidx=19&act=3&gather_index=1&item_index=-999\"},{\"poiId\":4178721,\"frontImg\":\"https://img.meituan.net/600.600/msmerchant/78705d58ee0d58841d90f9725d2f75ad31587.jpg\",\"title\":\"塞纳左岸咖啡（未央路店）\",\"avgScore\":4.2,\"allCommentNum\":4600,\"address\":\"未央区未央路98号（西安市档案馆正对面，大明宫西站B出口向南50米）\",\"avgPrice\":56,\"dealList\":[],\"hasAds\":false,\"adsClickUrl\":\"\",\"adsShowUrl\":\"\"},{\"poiId\":668853,\"frontImg\":\"https://img.meituan.net/600.600/msmerchant/5e851a83697d0f72408f5548f9d9c9b9100665.jpg\",\"title\":\"老刘家牛羊肉泡馍（立新街店）\",\"avgScore\":4.7,\"allCommentNum\":6760,\"address\":\"莲湖区立新街27号（近八一街小学）\",\"avgPrice\":22,\"dealList\":[],\"hasAds\":false,\"adsClickUrl\":\"\",\"adsShowUrl\":\"\"},{\"poiId\":164464835,\"frontImg\":\"https://img.meituan.net/msmerchant/969dbaa7a8b7c132317d0e7d138d5e35460653.jpg@600w_600h_1l\",\"title\":\"木辛水水冰煮羊火锅（五路口旗舰店）\",\"avgScore\":4.8,\"allCommentNum\":736,\"address\":\"新城区解放路186号苏宁易购广场四层\",\"avgPrice\":81,\"dealList\":[],\"hasAds\":true,\"adsClickUrl\":\"https://mlog.dianping.com/api/cpv/billing?productid=74&display_id=50028&bg=0&pctr=0.055492776886035315&ad_cj=g67NkYhQ4uDbhqWqlQDGIZUSq9nVA8dUlnm5DitjHE4i95lQdmW_rYIJtsDUuOWqw-2HwbAfrVxjVNBvgw2AysdKuLbtTwEqehk955x-RT2LmrJNMvzQXla_F0E7wFraMLUPCiWve_RXDoQ&ad_ci=g67NmYlA7qmT1L2-zQ_CMcBF7oOMVehPmyflBC16GE8s8I8HLCTj7c9X4crXqKX_h77ahtpQqwg2W9F0gh3Kn5BNuLTNeQUreh045Z18Sj2LnrVZcqiPE1K8HkYvmxb6C7VgKCiifqRTCYs3&discount=1&mtlaunch_city_id=42&bu=2&category_id=110&pos=1&mtuser_id64=0&pcvr=0.004204081632653063&client_version=6.5.1&mtdpid=18cadffe6c0f437b9af9.1606359642.1.0.0&bottomprice=1.0&user_agent=pc&launch_city_id=0&mtcategory_ids=1&sver=2&AdExpPath=3-56-112,3-169-830,3-287-1751,3-140-565,3-296-1796,3-50-100,3-164-1594,3-227-1297,3-12-28,18-293-1778,3-201-1096&bottomfen=100&mtuser_id=0&adsCtrStrategy=SearchPcSearchBaseline&page_city_id=0&entityplat=2&ad_v=2&mtadshop_id=164464835&mtpage_city_id=42&adidx=22&act=2&gather_index=1&item_index=-999\",\"adsShowUrl\":\"https://mlog.dianping.com/api/cpv/action?productid=74&display_id=50028&bg=0&pctr=0.055492776886035315&ad_cj=g67NkYhQ4uDbhqWqlQDGIZUSq9nVA8dUlnm5DitjHE4i95lQdmW_rYIJtsDUuOWqw-2HwbAfrVxjVNBvgw2AysdKuLbtTwEqehk955x-RT2LmrJNMvzQXla_F0E7wFraMLUPCiWve_RXDoQ&ad_ci=g67NmYlA7qmT1L2-zQ_CMcBF7oOMVehPmyflBC16GE8s8I8HLCTj7c9X4crXqKX_h77ahtpQqwg2W9F0gh3Kn5BNuLTNeQUreh045Z18Sj2LnrVZcqiPE1K8HkYvmxb6C7VgKCiifqRTCYs3&discount=1&mtlaunch_city_id=42&bu=2&category_id=110&pos=1&mtuser_id64=0&pcvr=0.004204081632653063&client_version=6.5.1&mtdpid=18cadffe6c0f437b9af9.1606359642.1.0.0&bottomprice=1.0&user_agent=pc&launch_city_id=0&mtcategory_ids=1&sver=2&AdExpPath=3-56-112,3-169-830,3-287-1751,3-140-565,3-296-1796,3-50-100,3-164-1594,3-227-1297,3-12-28,18-293-1778,3-201-1096&bottomfen=100&mtuser_id=0&adsCtrStrategy=SearchPcSearchBaseline&page_city_id=0&entityplat=2&ad_v=2&mtadshop_id=164464835&mtpage_city_id=42&adidx=22&act=3&gather_index=1&item_index=-999\"},{\"poiId\":60771,\"frontImg\":\"https://img.meituan.net/600.600/msmerchant/fb7651b1c2471aa878a0b3104db4b02e50690.jpg\",\"title\":\"花腰部落（陕师大店）\",\"avgScore\":4.3,\"allCommentNum\":3193,\"address\":\"雁塔区师大路27号邮局东侧（邮局旁）\",\"avgPrice\":39,\"dealList\":[],\"hasAds\":false,\"adsClickUrl\":\"\",\"adsShowUrl\":\"\"},{\"poiId\":42413291,\"frontImg\":\"http://p0.meituan.net/600.600/mogu/4b13790e6d483f2a71f9fbc3a9f715e175822.jpg\",\"title\":\"澄城崇斌水盆羊肉（后宰门店）\",\"avgScore\":4.9,\"allCommentNum\":3490,\"address\":\"新城区后宰门与北新街交叉口向西20米路南（筑梦幼儿园对面）\",\"avgPrice\":25,\"dealList\":[],\"hasAds\":false,\"adsClickUrl\":\"\",\"adsShowUrl\":\"\"},{\"poiId\":93299472,\"frontImg\":\"https://img.meituan.net/msmerchant/ea301c40d928d3d874bb757634007611491456.jpg@600w_600h_1l\",\"title\":\"炙铜涮肉\",\"avgScore\":4.6,\"allCommentNum\":88,\"address\":\"新城区案板街吉庆巷吉庆大厦b座停车场出入口（柳巷面馆东行20米）\",\"avgPrice\":84,\"dealList\":[],\"hasAds\":true,\"adsClickUrl\":\"https://mlog.dianping.com/api/cpv/billing?productid=74&display_id=50028&bg=0&pctr=0.06576850094876663&ad_cj=bXWt6yKj836HG5oRSWWZUvmKo8zhJFeHG8aRjBjnp96XK-bao3SJUOMrDzKMNvX2kIsGx4u0bOHcxZkXoxous6WJv80PMIr8dNlvRwDI0XfjWZsImlxFIAhPsPslae_O5DH35Kg4rJDkbDA&ad_ci=bXWt4yOz_zfPSYIFEWqdQqzc6ZS-cnicFpjBhhnxrNmeJ_CP-THREK93XzqGI7Ou29hUgfK_YbjQxIUSpQxk4vKOv88vBo79dN1qRQHK3nfjXZwc2ggabQxMufwxMqPu3zGYn609_cGzMjAZQw&discount=1&mtlaunch_city_id=42&bu=2&category_id=110&pos=1&mtuser_id64=0&pcvr=0.0019230769230769236&client_version=6.5.1&mtdpid=18cadffe6c0f437b9af9.1606359642.1.0.0&bottomprice=1.0&user_agent=pc&launch_city_id=0&mtcategory_ids=1&sver=2&AdExpPath=3-56-112,3-169-830,3-287-1751,3-140-565,3-296-1796,3-50-100,3-164-1594,3-227-1297,3-12-28,18-293-1778,3-201-1096&bottomfen=100&mtuser_id=0&adsCtrStrategy=SearchPcSearchBaseline&page_city_id=0&entityplat=2&ad_v=2&mtadshop_id=93299472&mtpage_city_id=42&adidx=25&act=2&gather_index=1&item_index=-999\",\"adsShowUrl\":\"https://mlog.dianping.com/api/cpv/action?productid=74&display_id=50028&bg=0&pctr=0.06576850094876663&ad_cj=bXWt6yKj836HG5oRSWWZUvmKo8zhJFeHG8aRjBjnp96XK-bao3SJUOMrDzKMNvX2kIsGx4u0bOHcxZkXoxous6WJv80PMIr8dNlvRwDI0XfjWZsImlxFIAhPsPslae_O5DH35Kg4rJDkbDA&ad_ci=bXWt4yOz_zfPSYIFEWqdQqzc6ZS-cnicFpjBhhnxrNmeJ_CP-THREK93XzqGI7Ou29hUgfK_YbjQxIUSpQxk4vKOv88vBo79dN1qRQHK3nfjXZwc2ggabQxMufwxMqPu3zGYn609_cGzMjAZQw&discount=1&mtlaunch_city_id=42&bu=2&category_id=110&pos=1&mtuser_id64=0&pcvr=0.0019230769230769236&client_version=6.5.1&mtdpid=18cadffe6c0f437b9af9.1606359642.1.0.0&bottomprice=1.0&user_agent=pc&launch_city_id=0&mtcategory_ids=1&sver=2&AdExpPath=3-56-112,3-169-830,3-287-1751,3-140-565,3-296-1796,3-50-100,3-164-1594,3-227-1297,3-12-28,18-293-1778,3-201-1096&bottomfen=100&mtuser_id=0&adsCtrStrategy=SearchPcSearchBaseline&page_city_id=0&entityplat=2&ad_v=2&mtadshop_id=93299472&mtpage_city_id=42&adidx=25&act=3&gather_index=1&item_index=-999\"},{\"poiId\":683475,\"frontImg\":\"https://img.meituan.net/600.600/msmerchant/ebad404039879ada787f7c4f216393cf114464.jpg\",\"title\":\"Venus Cake 维纳斯蛋糕工坊（龙首村店）\",\"avgScore\":4,\"allCommentNum\":16110,\"address\":\"未央区永福路北路祥福居底商\",\"avgPrice\":36,\"dealList\":[],\"hasAds\":false,\"adsClickUrl\":\"\",\"adsShowUrl\":\"\"},{\"poiId\":42297150,\"frontImg\":\"https://img.meituan.net/600.600/msmerchant/72be7bc5243460f071a28405428cc712303636.jpg\",\"title\":\"重庆渝味晓宇火锅（粉巷店）\",\"avgScore\":4.6,\"allCommentNum\":6884,\"address\":\"碑林区南院门食尚南院古道茶城二楼A8-A9\",\"avgPrice\":95,\"dealList\":[],\"hasAds\":false,\"adsClickUrl\":\"\",\"adsShowUrl\":\"\"},{\"poiId\":1514293308,\"frontImg\":\"https://img.meituan.net/msmerchant/6731693ce64a5bdcf34046e46b4ab7dd172981.jpg@600w_600h_1l\",\"title\":\"虾捞叨·香辣活虾·海鲜现蒸（立丰城市生活广场店）\",\"avgScore\":4.8,\"allCommentNum\":19,\"address\":\"雁塔区丈八东路与子午大道交叉口西南角立丰城市生活广场6楼虾捞叨\",\"avgPrice\":55,\"dealList\":[],\"hasAds\":true,\"adsClickUrl\":\"https://mlog.dianping.com/api/cpv/billing?productid=74&display_id=50028&bg=0&pctr=0.06239344262295081&ad_cj=Px8ywkQqVcFe3UNaoqPtl98tTfw35V2WjfffYp3XFQTqP2kjA2qogUdl-4QqfGwkbiycp4LnZSBGqq0mDt4GDsehZZ1GvAlgpMxLmXS_1JaEl5wUZ3sUyW_in28Rq5eqyDfdrgQjMXgE4bHa8CJi&ad_ci=Px8yykU6WYgWj1tO-qzkh4x8DqBrs3KNgKmLap_NFw3rOGAqFD7_wxoitN53dHtlPmrJ-8WLPHxd-fxyAd8dDcmhZZ1GnQV-ta4Ty3m81JKDlJARczlKlCjnmmYYr5a7jT30vxVdaSsB4bCN8Cg&discount=1&mtlaunch_city_id=42&bu=2&category_id=110&pos=1&mtuser_id64=0&pcvr=0.0026111111111111114&client_version=6.5.1&mtdpid=18cadffe6c0f437b9af9.1606359642.1.0.0&bottomprice=1.0&user_agent=pc&launch_city_id=0&mtcategory_ids=1&sver=2&AdExpPath=3-56-112,3-169-830,3-287-1751,3-140-565,3-296-1796,3-50-100,3-164-1594,3-227-1297,3-12-28,18-293-1778,3-201-1096&bottomfen=100&mtuser_id=0&adsCtrStrategy=SearchPcSearchBaseline&page_city_id=0&entityplat=2&ad_v=2&mtadshop_id=1514293308&mtpage_city_id=42&adidx=28&act=2&gather_index=1&item_index=-999\",\"adsShowUrl\":\"https://mlog.dianping.com/api/cpv/action?productid=74&display_id=50028&bg=0&pctr=0.06239344262295081&ad_cj=Px8ywkQqVcFe3UNaoqPtl98tTfw35V2WjfffYp3XFQTqP2kjA2qogUdl-4QqfGwkbiycp4LnZSBGqq0mDt4GDsehZZ1GvAlgpMxLmXS_1JaEl5wUZ3sUyW_in28Rq5eqyDfdrgQjMXgE4bHa8CJi&ad_ci=Px8yykU6WYgWj1tO-qzkh4x8DqBrs3KNgKmLap_NFw3rOGAqFD7_wxoitN53dHtlPmrJ-8WLPHxd-fxyAd8dDcmhZZ1GnQV-ta4Ty3m81JKDlJARczlKlCjnmmYYr5a7jT30vxVdaSsB4bCN8Cg&discount=1&mtlaunch_city_id=42&bu=2&category_id=110&pos=1&mtuser_id64=0&pcvr=0.0026111111111111114&client_version=6.5.1&mtdpid=18cadffe6c0f437b9af9.1606359642.1.0.0&bottomprice=1.0&user_agent=pc&launch_city_id=0&mtcategory_ids=1&sver=2&AdExpPath=3-56-112,3-169-830,3-287-1751,3-140-565,3-296-1796,3-50-100,3-164-1594,3-227-1297,3-12-28,18-293-1778,3-201-1096&bottomfen=100&mtuser_id=0&adsCtrStrategy=SearchPcSearchBaseline&page_city_id=0&entityplat=2&ad_v=2&mtadshop_id=1514293308&mtpage_city_id=42&adidx=28&act=3&gather_index=1&item_index=-999\"},{\"poiId\":2793079,\"frontImg\":\"http://p1.meituan.net/600.600/deal/__32939944__6355828.jpg\",\"title\":\"老徐记葫芦头泡馍店\",\"avgScore\":3.9,\"allCommentNum\":3160,\"address\":\"新城区东六路与解放路交叉口（天顺大酒店对面）\",\"avgPrice\":15,\"dealList\":[],\"hasAds\":false,\"adsClickUrl\":\"\",\"adsShowUrl\":\"\"},{\"poiId\":4649019,\"frontImg\":\"http://p1.meituan.net/600.600/deal/1663ad277d34ec024fe78d1fc4f2333e305978.jpg\",\"title\":\"蜀渝香自助小火锅\",\"avgScore\":4.3,\"allCommentNum\":1172,\"address\":\"雁塔区西安市高新区丈八街办甘家寨村东三排17号楼一单元一层门面房\",\"avgPrice\":22,\"dealList\":[],\"hasAds\":false,\"adsClickUrl\":\"\",\"adsShowUrl\":\"\"}]}}";
+        var xianObj = JSON.parse(xian);
+        var html = "";
+        for (var i = 20; i > 0; i--) {
+            html += '<div class="row">' +
+                '<span class="col">' + getDate(i, 20) + '</span>' +
+                '<span class="col">' + jsonObj[random(0, jsonObj.length - 1)] + '</span>' +
+                '<span class="col">' + xianObj.data.poiInfos[random(0, xianObj.data.poiInfos.length - 1)].address + '</span>' +
+                '<span class="icon-dot"></span>' +
+                '</div>'
+        }
+        document.getElementById("startList").innerHTML = html;
+    }
+
+    /**
+     * 获取启动时间
+     * @param i
+     * @param all
+     * @returns {*}
+     */
+    function getDate(i, all) {
+        var nowTime = parseInt(new Date().getTime() / 1000);
+        return formatDate(nowTime - (24 * 3600 * (all - i + 1)) + random(0, 1.3 * 24 * 3600));
+    }
+
+    /**
+     * 交易总数
+     * @param run
+     */
+    function change_trade(run) {
+        var nowTime = parseInt(new Date().getTime() / 1000);
+        if ((nowTime % 10 === random(0, 5)) || run) {
+            var order_num = parseInt((nowTime - 1590940800) / 6);
+            data.day365.orders = order_num;
+            data.day365.amount = order_num * 6;
+            data.day90.orders = parseInt(order_num / 4);
+            data.day90.amount = parseInt(order_num / 4) * 6;
+            data.day30.orders = parseInt(order_num / 4 / 3);
+            data.day30.amount = parseInt(order_num / 4 / 3) * 6;
+
+            //获取本月第一天零点零分零秒
+            var date = new Date();
+            date.setHours(0);
+            date.setSeconds(0);
+            date.setMinutes(0);
+            var startTime = parseInt(date.getTime() / 1000);
+            order_num = parseInt((nowTime - startTime) / 16.48);
+            data.day1.orders = order_num;
+            data.day1.amount = order_num * 12;
+        }
+        console.log(data);
+    }
+
+    //时间戳转换方法    date:时间戳数字
+    function formatDate(date) {
+        var date = new Date(date * 1000);
+        var YY = date.getFullYear() + '-';
+        var MM = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+        var DD = (date.getDate() < 10 ? '0' + (date.getDate()) : date.getDate());
+        // var hh = (date.getHours() < 10 ? '0' + date.getHours() : date.getHours()) + ':';
+        // var mm = (date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()) + ':';
+        // var ss = (date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds());
+        return YY + MM + DD /*+ " " + hh + mm + ss*/;
+    }
+
+    function random(n, m) {
+        return Math.floor(Math.random() * (m - n + 1) + n);
+    }
+
+    clock();
+    setInterval(clock, 1654);
+
+</script>
+</html>
