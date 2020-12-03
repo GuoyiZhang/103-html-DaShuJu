@@ -401,8 +401,7 @@
     function device_online(run) {
         var nowTime = parseInt(new Date().getTime() / 1000);
         if ((nowTime % 10 === random(0, 5) && nowTime % 10 === random(0, 5)) || run) {
-            var device_online = parseInt(deviceNum * random(80, 89) / 100 + deviceNum * random(2, 8) / 3000);
-            document.getElementById("device_online_num").innerHTML = device_online;
+            document.getElementById("device_online_num").innerHTML = parseInt(deviceNum * random(80, 89) / 100 + deviceNum * random(2, 8) / 3000);
         }
     }
 
@@ -411,10 +410,9 @@
      * @param run
      */
     function device_offline(run) {
-        var nowTime = parseInt(new Date().getTime() / 1000);
+        const nowTime = parseInt(new Date().getTime() / 1000);
         if ((nowTime % 10 === random(0, 9) && nowTime % 10 === random(0, 9)) || run) {
-            var device_offline = parseInt(deviceNum * 5 / 1000 + deviceNum * random(1, 8) / 10000);
-            document.getElementById("device_offline_num").innerHTML = device_offline;
+            document.getElementById("device_offline_num").innerHTML = parseInt(deviceNum * 5 / 1000 + deviceNum * random(1, 8) / 10000);
         }
     }
 
@@ -423,12 +421,12 @@
      * @param run
      */
     function channel(run) {
-        var nowTime = parseInt(new Date().getTime() / 1000);
+        const nowTime = parseInt(new Date().getTime() / 1000);
         if ((nowTime % 10 === random(0, 9) && nowTime % 10 === random(0, 9)) || run) {
-            var channel_canyin = parseInt(40 - random(0, 3) + random(0, 3));
-            var channel_bag = parseInt(30 - random(0, 3) + random(0, 3));
-            var channel_jiuba = parseInt(20 - random(0, 3) + random(0, 3));
-            var channel_bus = 100 - channel_canyin - channel_bag - channel_jiuba;
+            const channel_canyin = parseInt(40 - random(0, 3) + random(0, 3));
+            const channel_bag = parseInt(30 - random(0, 3) + random(0, 3));
+            const channel_jiuba = parseInt(20 - random(0, 3) + random(0, 3));
+            const channel_bus = 100 - channel_canyin - channel_bag - channel_jiuba;
             document.getElementById("channel_canyin").innerHTML = channel_canyin + "%";
             document.getElementById("channel_bag").innerHTML = channel_bag + "%";
             document.getElementById("channel_jiuba").innerHTML = channel_jiuba + "%";
